@@ -16,13 +16,14 @@ exclude = [
 debug = 1
 
 [dependencies]
-opencv    = { version = "0.92.0", default-features = false, features = ["rgb"] }
+image = "0.25.2"
+opencv = "0.93.1"
+rgb = "0.8.50"
 # Copy rgb dependency from
 # https://github.com/twistedfall/opencv-rust/blob/v0.66.0/Cargo.toml
 # version 0.8.20 doesn't contain the deficiency mentioned in
 # https://deps.rs/crate/opencv/0.59.0#vulnerabilities
-rgb       = { version = "0.8.20", default-features = false }
-image     = { version = "0.25", default-features = false }
+
 thiserror = "1.0"
 
 [dependencies.rayon]
@@ -32,11 +33,3 @@ optional = true
 [features]
 default = ["rayon"]
 experimental = []
-
-[dev-dependencies]
-image = "0.24"
-
-[dev-dependencies.opencv]
-version = "0.83"
-default-features = false
-features = ["imgcodecs"]
